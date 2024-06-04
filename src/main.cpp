@@ -21,7 +21,7 @@ int main()
     initWorld(); // create the universal box2d world object 
 
     Graph G = Graph(true);
-    int totalNodes = 15;
+    int totalNodes = 17;
     for (int i=0;i<totalNodes;i++) {
       G.addNode(i);
     }
@@ -35,6 +35,8 @@ int main()
     G.setEdge(12, 13);
     G.setEdge(13, 14);
     G.setEdge(14, 15);
+    G.setEdge(15, 2);
+    G.setEdge(16, 4);
 
     // Generate circles for each node
     const auto& graph = G.get_graph();
@@ -49,7 +51,7 @@ int main()
       double x = WIDTH / 2 + SPACING * cos(angle);
       double y = HEIGHT / 2 + SPACING * sin(angle);
 
-      b2Body* body = addCircle(x, y, RADIUS, true);
+      b2Body* body = addCircle(x, y, RADIUS, true, 10);
       nodeBodyMap[nodeId] = body; 
       angle += angleIncrement;
     }

@@ -40,7 +40,7 @@ void initWorld() {
     world = new b2World(b2Vec2(0.0f, gravity));
 }
 
-b2Body* addCircle(int x, int y, int radius, bool dyn) {
+b2Body* addCircle(int x, int y, int radius, bool dyn, int spacing) {
     std::cout << "\nMade circle at " + std::to_string(x) + ", " + std::to_string(y) << std::endl;
 
     b2BodyDef bodydef;
@@ -50,7 +50,6 @@ b2Body* addCircle(int x, int y, int radius, bool dyn) {
     }
     b2Body* body = world->CreateBody(&bodydef);
 
-    int spacing = 3;
     b2CircleShape shape;
     shape.m_radius = pixels2Meters(radius*radius+spacing);
 
@@ -101,7 +100,7 @@ void addEdge(b2Body* bodyA, b2Body* bodyB) {
         b2Vec2 pos = posA + i * spacing * direction;
         int x = meters2Pixels(pos.x);
         int y = meters2Pixels(pos.y);
-        b2Body* circleBody = addCircle(x, y, 1, false); 
+        b2Body* circleBody = addCircle(x, y, 1, true, 0); 
         circles.push_back(circleBody);
     }
 

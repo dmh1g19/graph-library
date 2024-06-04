@@ -24,7 +24,7 @@ void stepPhysics();
 void renderScene();
 void addToMap(std::shared_ptr<Shape>, b2Body*, std::string, std::string);
 
-b2Body* addCircle(int, int, int, bool);
+b2Body* addCircle(int, int, int, bool, int);
 void addDistanceJoint(b2Body*, b2Body*);
 void addEdge(b2Body* , b2Body* );
 void initWorld();

@@ -24,20 +24,7 @@ void processInput(GLFWwindow* window) {
         
         if((currentTime - lastMouseClickTime >= cooldownDuration)) {
             glfwGetCursorPos(window, &xpos, &ypos);
-            addCircle(xpos, ypos, 4, true); 
-            
-            lastMouseClickTime = currentTime;
-        }
-    }
-    else if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS) {
-        auto currentTime = std::chrono::system_clock::now();
-        
-        if((currentTime - lastMouseClickTime >= cooldownDuration)) {
-            glfwGetCursorPos(window, &xpos, &ypos);
-            
-            b2Body* body1 = addCircle(xpos-200, ypos, 4, false);
-            b2Body* body2 = addCircle(xpos, ypos, 4, false);
-            addEdge(body1, body2); 
+            addCircle(xpos, ypos, 4, true, 3); 
             
             lastMouseClickTime = currentTime;
         }
