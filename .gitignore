@@ -1,0 +1,11 @@
+build
+include/glad
+include/KHR
+.vscode
+.idea
+src/glad.c
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+main
+CMakeFiles

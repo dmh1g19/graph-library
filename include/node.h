@@ -9,13 +9,13 @@ private:
   std::vector<int> edges;
 
 public:
-  Node(const int &id) : id(id) {}
+  Node(int id) : id(id) {}
 
-  void addName(const std::string &newName) {
+  void addName(std::string newName) {
     name = newName;
   }
 
-  void addEdge(const int &nodeId) {
+  void addEdge(int nodeId) {
     edges.push_back(nodeId);
   }
 
@@ -23,7 +23,7 @@ public:
     return edges;
   }
 
-  const std::string &getName() const {
+  std::string getName() const {
     return name;
   }
 };

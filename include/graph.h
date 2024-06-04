@@ -11,7 +11,7 @@ private:
   bool isDirect;
 
 public:
-  Graph(const bool &isDirect) : isDirect(isDirect)  {}
+  Graph(bool isDirect) : isDirect(isDirect)  {}
 
   void addNode(int nodeId) {
     nodes[nodeId] = new Node(nodeId);
@@ -62,6 +62,15 @@ public:
       sep = ", ";
     }
     std::cout << ss.str() << std::endl;
+  }
+
+  std::unordered_map<int, Node*> get_graph() {
+    return nodes;
+  }
+
+  void scale_free_graph(int total_nodes) {
+
+
   }
 };
 
