@@ -24,11 +24,12 @@ void stepPhysics();
 void renderScene();
 void addToMap(std::shared_ptr<Shape>, b2Body*, std::string, std::string);
 
-void addStaticGround(int, int, int, int, bool, const std::vector<std::string>&);
+b2Body* addCircle(int, int, int, bool);
+void addDistanceJoint(b2Body*, b2Body*);
+void addEdge(b2Body* , b2Body* );
 void initWorld();
-void addRect(int, int, int, int, bool);
-void addCircle(int, int, int, bool);
 
 std::vector<b2Vec2> parsePolygonCoordinates(const std::string&);
+extern std::vector<std::shared_ptr<Edge>> edgeList;
 
 #endif // PHYSICS_H

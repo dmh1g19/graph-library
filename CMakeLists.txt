@@ -24,6 +24,7 @@ set(SOURCES
     src/utilities.cpp
     src/shapeFactory.cpp
     src/circle.cpp
+    src/edge.cpp
 )
 
 add_executable(main ${SOURCES})
@@ -39,6 +40,8 @@ target_link_libraries(main OpenGL::GL glfw box2d)
 set(SHADERS
     shaders/vertex_shader_circle.glsl
     shaders/fragment_shader_circle.glsl
+    shaders/vertex_shader_edge.glsl
+    shaders/fragment_shader_edge.glsl
 )
 
 foreach(SHADER ${SHADERS})

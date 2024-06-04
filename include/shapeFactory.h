@@ -63,4 +63,22 @@ public:
     }
 };
 
+class Edge : public Shape {
+private:
+    float vertices[12] = {}; // 4 points with 3 components (x, y, z) each to form a rectangle
+    unsigned int VBO;
+    unsigned int VAO;
+    unsigned int shaderProgram;
+    glm::mat4 transformationMatrix;
+    float thickness;
+
+public:
+    void init(std::string, std::string) override;
+    void update(const glm::vec2&, float) override;
+    void render() override;
+    void useShaderProg() override;
+    void draw() override;
+};
+
 #endif // SHAPE_H
+

@@ -64,6 +64,17 @@ public:
     std::cout << ss.str() << std::endl;
   }
 
+  void prettyPrintNodesAndEdges() {
+    // The following loop prints out each node in the graph and what nodes they're connected to
+    for (const auto pair : nodes) {
+        std::cout << pair.first << " -> ";
+        for (int i=0;i<pair.second->getEdges().size();i++) {
+            std::cout << pair.second->getEdges()[i] << ", ";
+        }
+        std::cout << " " << std::endl;
+    }
+  }
+
   std::unordered_map<int, Node*> get_graph() {
     return nodes;
   }
