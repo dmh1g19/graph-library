@@ -25,6 +25,7 @@ set(SOURCES
     src/shapeFactory.cpp
     src/circle.cpp
     src/edge.cpp
+    src/graph.cpp
 )
 
 add_executable(main ${SOURCES})
