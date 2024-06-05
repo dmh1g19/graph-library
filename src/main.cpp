@@ -5,8 +5,6 @@
 #include "graph.h"
 
 double lastFrameTime = glfwGetTime();
-const int RADIUS = 4; 
-const int SPACING = 50;
 
 int main()
 {
